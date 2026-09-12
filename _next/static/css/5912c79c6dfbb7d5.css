@@ -111,3 +111,54 @@ Copyright (c) 2015 Daniel Eden
 .blog-sidebar__video-link,.blog-sidebar__video-icon,
 .blog-details__video-link,.blog-details__video-icon,
 .main-slider__video-link,.services-one__video-link{display:none!important}
+
+/* ===========================================================================
+   Help Cell — seções da página de detalhe de serviço
+   (O que é / Como funciona / Quanto custa / Por que fazer / FAQ)
+   =========================================================================== */
+.hc-sec{position:relative;padding:90px 0}
+.hc-sec--alt{background-color:var(--fixnix-primary)}
+.hc-sec__lead{font-size:18px;line-height:32px;color:var(--fixnix-gray);max-width:860px}
+.hc-sec__lead+.hc-sec__lead{margin-top:18px}
+
+.hc-passos{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.hc-passos li{position:relative;background-color:var(--fixnix-white);border-radius:8px;padding:30px 28px;
+  border:1px solid rgba(var(--fixnix-black-rgb),.08)}
+.hc-passos__n{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;
+  border-radius:50%;background-color:var(--fixnix-base);color:var(--fixnix-white);
+  font-family:var(--fixnix-font-two);font-weight:700;font-size:18px;margin-bottom:16px}
+.hc-passos h3{font-size:20px;line-height:28px;color:var(--fixnix-black);margin-bottom:8px}
+.hc-passos p{font-size:16px;line-height:26px;color:var(--fixnix-gray)}
+
+.hc-preco{margin-top:36px;background-color:var(--fixnix-white);border-radius:8px;padding:38px 36px;
+  border:1px solid rgba(var(--fixnix-black-rgb),.08);box-shadow:0 10px 40px rgba(var(--fixnix-black-rgb),.06)}
+.hc-preco__valor{font-family:var(--fixnix-font-two);font-weight:700;font-size:38px;line-height:1.2;
+  color:var(--fixnix-base)}
+.hc-preco__obs{margin-top:12px;font-size:16px;line-height:27px;color:var(--fixnix-gray)}
+.hc-preco__lista{list-style:none;margin:22px 0 0;padding:0}
+.hc-preco__lista li{position:relative;padding-left:26px;font-size:16px;line-height:30px;color:var(--fixnix-gray)}
+.hc-preco__lista li:before{content:"";position:absolute;left:0;top:12px;width:10px;height:10px;
+  border-radius:50%;background-color:var(--fixnix-base)}
+
+.hc-porques{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.hc-porques li{background-color:var(--fixnix-white);border-radius:8px;padding:30px 28px;
+  border:1px solid rgba(var(--fixnix-black-rgb),.08)}
+.hc-porques h3{font-size:20px;line-height:28px;color:var(--fixnix-black);margin-bottom:8px}
+.hc-porques p{font-size:16px;line-height:26px;color:var(--fixnix-gray)}
+
+.hc-faq{margin-top:40px;max-width:900px}
+.hc-faq__item{background-color:var(--fixnix-white);border:1px solid rgba(var(--fixnix-black-rgb),.08);
+  border-radius:8px;margin-bottom:14px;overflow:hidden}
+.hc-faq__q{width:100%;text-align:left;background:none;border:0;cursor:pointer;
+  padding:22px 56px 22px 26px;position:relative;font-family:var(--fixnix-font-two);font-weight:600;
+  font-size:18px;line-height:27px;color:var(--fixnix-black)}
+.hc-faq__q:after{content:"+";position:absolute;right:24px;top:50%;transform:translateY(-50%);
+  font-size:24px;color:var(--fixnix-base);line-height:1}
+.hc-faq__item.aberto .hc-faq__q:after{content:"\2212"}
+.hc-faq__a{display:none;padding:0 26px 24px;font-size:16px;line-height:28px;color:var(--fixnix-gray)}
+.hc-faq__item.aberto .hc-faq__a{display:block}
+
+.hc-cta{margin-top:36px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+@media (max-width:767px){.hc-sec{padding:60px 0}.hc-preco__valor{font-size:30px}}
