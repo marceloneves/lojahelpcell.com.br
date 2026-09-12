@@ -101,10 +101,28 @@
 - **Pitaçu** — empresa de saneamento de Jurerê — 7 anos de serviço
 - **Muffato** — rede de supermercados PR/SC — de 2010 a 2017
 
+## Contato (do site antigo lojahelpcell.com.br, aplicado no site novo)
+
+- **Telefone (Floripa Shopping):** (48) 3238-7381
+- **E-mail:** contato@lojahelpcell.com.br
+- **Endereço:** Rod. Virgílio Várzea, 587, **loja 124** — Saco Grande, Florianópolis/SC, 88032-001
+- **WhatsApp:** http://bit.ly/whatssitehelpcellfloripa **[?]** (encurtador — confirmar se ainda vale
+  e se pode virar link direto `wa.me`)
+- Telefone geral que também aparece no site antigo: (48) 3259-0143 **[?]**
+
+### Conflitos entre o site antigo e a gravação — resolvidos a favor da gravação
+
+| Dado | Site antigo | Gravação | O que está no site novo |
+|---|---|---|---|
+| Lojas | Floripa Shopping **e** Villa Romana (link do WhatsApp diz "iguatemi") | "Hoje nós estamos com a Floripa Shopping, fechou a do Iguatemi" | Só Floripa Shopping |
+| Horário | Seg a sex 09:00–18:00, sáb 09:00–12:00 | 10h–22h (horário do shopping), dom 14h–20h sem técnico | Gravação |
+
+**[?] Confirmar com o cliente:** o site antigo ainda anuncia a loja do Villa Romana com telefone
+(48) 3226-2317. Se ela estiver aberta, precisa entrar no site novo.
+
 ## Pendências de dados
 
-- Endereço completo da loja no Floripa Shopping (piso/número)
-- Telefone e WhatsApp
-- E-mail
 - Instagram e demais redes (cliente vai mandar a logo da rede social)
 - Preços dos serviços (nenhum foi informado — hoje o site mostra valores de exemplo)
+- Confirmar se atendem Computador Desktop e Câmera: o tema tem essas categorias, mas
+  a gravação só menciona iPhone/celular, MacBook, iPad/tablets e Apple Watch

@@ -63,3 +63,43 @@ Copyright (c) 2015 Daniel Eden
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+/* ---------------------------------------------------------------------------
+   Help Cell — remoção de TODAS as animações (pedido do cliente) e limpeza do
+   menu de homes, que agora aponta para uma única página.
+   --------------------------------------------------------------------------- */
+
+/* Nenhuma animação em nenhum elemento. O visibility:visible é obrigatório:
+   o WOW.js aplica visibility:hidden inline e, sem isto, o conteúdo que ele
+   controla nunca apareceria. */
+*,*::before,*::after{animation:none!important}
+.wow,.wow *{visibility:visible!important;opacity:1!important;animation-name:none!important}
+
+/* Só existe uma home: o dropdown com as 4 variantes não faz mais sentido */
+.main-menu__list>li.megamenu>ul{display:none!important}
+.main-menu__list>li.megamenu>a::after{display:none!important}
+.mobile-nav__content .main-menu__list>li.megamenu>ul,
+.mobile-nav__content .main-menu__list>li.megamenu .home-showcase{display:none!important}
+
+/* Hero: o movimento aqui vem de `transition`, não de `animation` — o zoom Ken
+   Burns de 7s no fundo (scale 1.11) e a entrada deslizante do texto (2s). */
+.main-slider .image-layer,.main-slider-two .image-layer-two,
+.main-slider-three .image-layer,.image-layer,.image-layer-two{
+  transition:none!important;transform:none!important}
+.main-slider__sub-title,.main-slider__title,.main-slider__text,.main-slider__btn-box,
+.main-slider-two__sub-title,.main-slider-two__title,.main-slider-two__text,.main-slider-two__btn-box,
+.main-slider-three__sub-title,.main-slider-three__title,.main-slider-three__text{
+  transition:none!important;transform:none!important;opacity:1!important}
+
+/* A hero tem um único slide: setas e paginação não têm função */
+.main-slider-two .main-slider-two__nav,
+.main-slider-two .swiper-pagination{display:none!important}
+
+/* Logotipo oficial da Help Cell em 2x: a altura é limitada aqui para ficar
+   nítido em tela retina sem estourar o tamanho no layout. */
+.main-menu__logo img,.mobile-nav__logo img{height:56px;width:auto}
+.footer-widget__logo img{height:52px;width:auto}
+
+/* A home usa o header variante (main-menu-two__logo); a regra anterior só
+   cobria main-menu__logo, então o logo 2x estourava o tamanho aqui. */
+.main-menu-two__logo img,.logo-box img{height:56px;width:auto}

@@ -13,6 +13,8 @@ var HELPCELL_GOOGLE = {
 (function () {
   'use strict';
   var G = HELPCELL_GOOGLE, MARCA = 'data-helpcell-google';
+  // o tema tem duas variantes de seção de depoimentos ('testimonal-two' é typo do tema)
+  var SECOES = '.testimonial-one, .testimonal-two, .testimonial-two';
 
   function estrelas(n) {
     var h = '', i;
@@ -46,7 +48,7 @@ var HELPCELL_GOOGLE = {
   }
 
   function aplica() {
-    var sec = document.querySelector('.testimonial-one');
+    var sec = document.querySelector(SECOES);
     if (!sec || sec.querySelector('[' + MARCA + ']')) return;
     var alvo = sec.querySelector('.col-xl-12') || sec.querySelector('.container') || sec;
     alvo.appendChild(bloco());
