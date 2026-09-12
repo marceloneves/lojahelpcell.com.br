@@ -103,3 +103,11 @@ Copyright (c) 2015 Daniel Eden
 /* A home usa o header variante (main-menu-two__logo); a regra anterior só
    cobria main-menu__logo, então o logo 2x estourava o tamanho aqui. */
 .main-menu-two__logo img,.logo-box img{height:56px;width:auto}
+
+/* Sem botão de play sobre as imagens: fica só a imagem. */
+.video-popup,
+.skill-one__video-link,.skill-one__video-icon,
+.about-two__video-link,.about-two__video-icon,
+.blog-sidebar__video-link,.blog-sidebar__video-icon,
+.blog-details__video-link,.blog-details__video-icon,
+.main-slider__video-link,.services-one__video-link{display:none!important}

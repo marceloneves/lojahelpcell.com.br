@@ -20,11 +20,20 @@ E abrir <http://127.0.0.1:5500/>.
 
 | Caminho | O que é |
 |---|---|
-| `*.html` | 23 páginas (`index.html` é a home; `404.html` a página de erro) |
+| `index.html` | Home, servida em `/` |
+| `<nome>/index.html` | Uma pasta por página, para a URL não mostrar `.html` (ex.: `/servico-celular/`) |
+| `404.html` | Página de erro, na raiz porque é onde os hosts procuram |
 | `_next/static/` | CSS e JS do tema. O CSS tem, **no fim do arquivo**, blocos próprios da Help Cell (avaliações do Google e remoção das animações de imagem) |
 | `assets/images/` | Imagens. `_originais-*/` guardam os arquivos originais do tema |
 | `assets/js/helpcell-google.js` | Bloco de avaliações do Google na home (nota, total e mapa da ficha) |
 | `CONTEUDO-HELPCELL.md` | Conteúdo real do cliente, extraído das reuniões — fonte da verdade para os textos |
+
+## URLs
+
+As páginas ficam em **pastas com `index.html`**, então a URL não mostra `.html`
+(`/contato/`, `/servico-celular/`). Por isso **todo caminho de asset e link é absoluto**
+(`/assets/...`, `/_next/...`, `/services/`) — caminho relativo quebraria dentro das subpastas.
+Ao adicionar página ou link novo, use sempre caminho absoluto.
 
 ## Atenção ao editar textos
 
