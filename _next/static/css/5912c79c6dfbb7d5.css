@@ -162,3 +162,74 @@ Copyright (c) 2015 Daniel Eden
 
 .hc-cta{margin-top:36px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 @media (max-width:767px){.hc-sec{padding:60px 0}.hc-preco__valor{font-size:30px}}
+
+/* ===========================================================================
+   Help Cell — área de toque no mobile.
+   O tema entrega o botão do menu com 18x27px; o mínimo confortável para o
+   dedo é 44x44 (recomendação de Apple e Google).
+   =========================================================================== */
+@media (max-width:991px){
+  .mobile-nav__toggler,.search-toggler:not(.search-popup__overlay),
+  .mobile-nav__close,.main-menu-two__search,.main-menu__search{
+    display:inline-flex!important;align-items:center;justify-content:center;
+    min-width:44px;min-height:44px}
+  .mobile-nav__content .main-menu__list>li>a{padding-top:14px;padding-bottom:14px}
+  .mobile-nav__content .main-menu__list>li>ul>li>a{padding-top:12px;padding-bottom:12px}
+  .mobile-nav__content .main-menu__list>li.dropdown>button{min-width:44px;min-height:44px}
+  /* o traço decorativo do título fica melhor antes do texto no mobile */
+  .hc-sec .section-title__tagline{display:inline-block}
+}
+
+/* Botão flutuante de WhatsApp */
+.hc-zap{position:fixed;right:20px;bottom:20px;z-index:9998;display:inline-flex;align-items:center;
+  gap:10px;height:60px;padding:0 20px 0 16px;border-radius:32px;background-color:#25d366;
+  color:#fff!important;box-shadow:0 8px 26px rgba(0,0,0,.22);text-decoration:none;
+  font-family:var(--fixnix-font-two);font-weight:600;font-size:16px;line-height:1;
+  transition:box-shadow .3s ease}
+.hc-zap:hover{color:#fff!important;box-shadow:0 12px 34px rgba(0,0,0,.3)}
+.hc-zap svg{width:30px;height:30px;flex:0 0 30px;color:#25d366}
+.hc-zap__txt{white-space:nowrap}
+/* no mobile fica só o ícone, para não cobrir o conteúdo */
+@media (max-width:767px){
+  .hc-zap{right:16px;bottom:16px;width:58px;height:58px;padding:0;justify-content:center;border-radius:50%}
+  .hc-zap__txt{display:none}
+}
+/* não briga com o botão de voltar ao topo do tema */
+.scroll-to-top,.scroll-top{bottom:92px!important}
+@media (max-width:767px){.scroll-to-top,.scroll-top{bottom:86px!important}}
+
+/* touch-action: manipulation remove a espera de duplo-toque do navegador,
+   que às vezes engole o primeiro toque nos botões do header. */
+.mobile-nav__toggler,.search-toggler,.mobile-nav__close,.hc-zap,
+.hc-faq__q,.thm-btn,.mobile-nav__content li.dropdown>button{touch-action:manipulation}
+
+/* ===========================================================================
+   O site é servido como HTML estático: sem o Swiper inicializado, os slides
+   ficariam lado a lado e apertados. Aqui eles degradam com elegância —
+   depoimentos viram grade, os outros carrosséis mostram o primeiro slide.
+   =========================================================================== */
+.swiper:not(.swiper-initialized) .swiper-wrapper{display:block}
+.swiper:not(.swiper-initialized) .swiper-slide{width:auto!important;margin:0 0 30px!important}
+.swiper:not(.swiper-initialized) .swiper-button-next,
+.swiper:not(.swiper-initialized) .swiper-button-prev,
+.swiper:not(.swiper-initialized) .swiper-pagination,
+.swiper:not(.swiper-initialized) .main-slider-two__nav{display:none!important}
+/* hero: um slide só */
+.main-slider-two .swiper:not(.swiper-initialized) .swiper-slide:not(:first-child),
+.main-slider .swiper:not(.swiper-initialized) .swiper-slide:not(:first-child){display:none!important}
+/* depoimentos: os três lado a lado */
+.testimonial-one__carousel:not(.swiper-initialized) .swiper-wrapper,
+.testimonial-two__carousel:not(.swiper-initialized) .swiper-wrapper{
+  display:grid!important;gap:30px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.testimonial-one__carousel:not(.swiper-initialized) .swiper-slide,
+.testimonial-two__carousel:not(.swiper-initialized) .swiper-slide{margin:0!important}
+/* o preloader do tema era escondido por JS */
+.preloader{display:none!important}
+
+/* O tema só revela o texto da hero no slide com a classe swiper-slide-active,
+   que o Swiper aplicava por JS. Sem ele, o texto ficaria invisível. */
+.main-slider__sub-title,.main-slider__title,.main-slider__text,.main-slider__btn-box,
+.main-slider-two__sub-title,.main-slider-two__title,.main-slider-two__text,
+.main-slider-two__btn-box,.main-slider-three__title,.main-slider-three__text,
+.main-slider .image-layer,.main-slider-two .image-layer-two{
+  visibility:visible!important;opacity:1!important}

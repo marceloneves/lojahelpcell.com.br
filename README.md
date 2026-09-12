@@ -35,18 +35,24 @@ As páginas ficam em **pastas com `index.html`**, então a URL não mostra `.htm
 (`/assets/...`, `/_next/...`, `/services/`) — caminho relativo quebraria dentro das subpastas.
 Ao adicionar página ou link novo, use sempre caminho absoluto.
 
-## Atenção ao editar textos
+## O site é HTML estático
 
-O site é um build de Next.js servido estaticamente, então **cada texto existe em até
-três lugares** e todos precisam ser alterados juntos — senão o React reverte o texto
-na hidratação:
+O site nasceu de um build de Next.js espelhado, mas **a hidratação do React foi
+removida de todas as páginas**: não há mais `self.__next_f` nem os chunks de
+`_next/static/chunks/*.js` sendo carregados. Sobrou o CSS do tema.
 
-1. o HTML renderizado;
-2. o *flight data* (`self.__next_f.push(...)`) dentro do mesmo HTML, em JSON escapado;
-3. os chunks em `_next/static/chunks/` (para os componentes client).
+O motivo: com a hidratação ativa, o React reconciliava o DOM e desfazia qualquer
+alteração — apagava o texto editado, o atributo `style`, a classe no `<body>`. Era a
+causa comum de praticamente todos os bugs desta base (lupa e menu mobile mortos,
+contadores vazios, texto revertendo). Sem ela, **editar o HTML é suficiente**: um
+texto, um lugar.
 
-Particularidades já encontradas: preços aparecem como `$$33.00` no flight data (o RSC
-escapa `$` inicial) e `©` vira `\xa9` nos chunks minificados.
+O que o tema fazia por JS e agora vive em `assets/js/helpcell-ui.js`:
+busca, menu mobile, acordeão do FAQ, header fixo ao rolar, voltar ao topo,
+cartão de serviço clicável e o botão flutuante de WhatsApp.
+
+Os carrosséis do Swiper degradam por CSS: a hero mostra um slide e os depoimentos
+viram grade de três colunas.
 
 ## Pendências
 
